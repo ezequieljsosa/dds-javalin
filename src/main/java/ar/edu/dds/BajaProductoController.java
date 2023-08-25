@@ -17,7 +17,7 @@ public class BajaProductoController implements Handler {
 		public void handle(Context ctx) throws Exception {
 			Long prodID = Long.parseLong(ctx.pathParam("prodId"));
 			
-			if (repo.equals(prodID)) {
+			if (repo.exists(prodID)) {
 				Producto prod = repo.findById(prodID);
 				this.repo.remove(prod);
 			} else {

@@ -1,6 +1,7 @@
 package ar.edu.dds;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class RepoProducto {
@@ -17,6 +18,8 @@ public class RepoProducto {
 	public RepoProducto() {
 		super();
 		this.productos = new ArrayList<>();
+		Arrays.asList(new Producto("un prod", "una desc"),new Producto("otro prod", "otra desc")).stream(
+				).forEach(x -> this.add(x));
 	}
 	
 	public void add(Producto prod) {
